@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="こゅき,こゅき's Blog" />
+  
+  <meta name="description" content="百度地图使用文档(Version2.0.56)引入百度地图包其中common.js需要自己手动配置 1234&lt;script src&#x3D;&quot;http:&#x2F;&#x2F;api.map.baidu.com&#x2F;api?v&#x3D;1.0&amp;type&#x3D;webgl&amp;ak&#x3D;1XjLLEhZhQNUzd93EjU5nOGQ&quot;&gt;&lt;&#x2F;script&gt;&lt;script src&#x3D;&amp;quo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="百度地图使用文档(Version2.0.56)引入百度地图包其中common.js需要自己手动配置 1234&lt;script src&#x3D;&quot;http:&#x2F;&#x2F;api.map.baidu.com&#x2F;api?v&#x3D;1.0&amp;type&#x3D;webgl&amp;ak&#x3D;1XjLLEhZhQNUzd93EjU5nOGQ&quot;&gt;&lt;&#x2F;script&gt;&lt;script src&#x3D;&amp;quo">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-20T08:13:45.788Z">
+<meta property="article:modified_time" content="2020-08-07T09:19:56.885Z">
+<meta property="article:author" content="こゅき">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">こゅき&#39;s Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        こゅき&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        WEB 开发
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="こゅき" target="_blank" href="//">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/1211428762">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-map使用文档" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h2 id="百度地图使用文档-Version2-0-56"><a href="#百度地图使用文档-Version2-0-56" class="headerlink" title="百度地图使用文档(Version2.0.56)"></a>百度地图使用文档(Version2.0.56)</h2><h4 id="引入百度地图包"><a href="#引入百度地图包" class="headerlink" title="引入百度地图包"></a>引入百度地图包</h4><p>其中common.js需要自己手动配置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">&quot;http://api.map.baidu.com/api?v=1.0&amp;type=webgl&amp;ak=1XjLLEhZhQNUzd93EjU5nOGQ&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://mapv.baidu.com/build/mapv.min.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;./js/common.js&quot;</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">&quot;https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.62/dist/mapvgl.min.js&quot;</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="DOM结构"><a href="#DOM结构" class="headerlink" title="DOM结构"></a>DOM结构</h4><p>需要一个DOM容器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">        <span class="selector-id">#map_container</span> &#123;</span></span><br><span class="line">                width: 100%;</span><br><span class="line">                height: 100%;</span><br><span class="line">                margin: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map_container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>具体代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>MapVGL<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=Edge&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;initial-scale=1.0, user-scalable=no&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line">            html,</span><br><span class="line">            body &#123;</span><br><span class="line">                width: 100%;</span><br><span class="line">                height: 100%;</span><br><span class="line">                margin: 0;</span><br><span class="line">                padding: 0;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">            <span class="selector-id">#map_container</span> &#123;</span></span><br><span class="line">                width: 100%;</span><br><span class="line">                height: 100%;</span><br><span class="line">                margin: 0;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">        //引入百度地图包</span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://api.map.baidu.com/api?v=1.0&amp;type=webgl&amp;ak=1XjLLEhZhQNUzd93EjU5nOGQ&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://mapv.baidu.com/build/mapv.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./js/common.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.62/dist/mapvgl.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;map_container&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">            <span class="comment">/* global BMapGL */</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">/* global Stats */</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">/* global mapv */</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">/* global mapvgl */</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">/* global initMap */</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">/* global purpleStyle */</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> map = initMap(&#123;</span></span><br><span class="line">                tilt: 60,</span><br><span class="line">                heading: 0,</span><br><span class="line"><span class="javascript">                center: [<span class="number">116.201607</span>, <span class="number">39.90807</span>],  <span class="comment">//实际呈现的经纬度</span></span></span><br><span class="line">                zoom: 14,</span><br><span class="line"><span class="javascript">                style: purpleStyle <span class="comment">//地图样式</span></span></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="javascript"><span class="comment">//初始化地图</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> view = <span class="keyword">new</span> mapvgl.View(&#123;</span></span><br><span class="line">                map: map</span><br><span class="line">            &#125;);</span><br><span class="line"><span class="javascript"><span class="comment">//挂载地图实例</span></span></span><br><span class="line">            view.startAnimation();</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> lineLayer = <span class="keyword">new</span> mapvgl.LineLayer(&#123;</span></span><br><span class="line">                width: 10,</span><br><span class="line"><span class="javascript">                <span class="comment">// isFlat: false,</span></span></span><br><span class="line"><span class="javascript">                color: <span class="string">&#x27;rgba(55, 71, 226, 0.9)&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                style: <span class="string">&#x27;road&#x27;</span></span></span><br><span class="line">            &#125;);</span><br><span class="line"><span class="javascript"><span class="comment">//地图线路格式</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> layer = <span class="keyword">new</span> mapvgl.IconLayer(&#123;</span></span><br><span class="line">                width: 100 / 4,</span><br><span class="line">                height: 153 / 4,</span><br><span class="line"><span class="javascript">                <span class="comment">// offset: [0, 0],</span></span></span><br><span class="line"><span class="javascript">                icon: <span class="string">&#x27;img/location.png&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                enablePicked: <span class="literal">true</span>, <span class="comment">// 是否可以拾取</span></span></span><br><span class="line"><span class="javascript">                selectedIndex: <span class="number">-1</span>, <span class="comment">// 选中项</span></span></span><br><span class="line"><span class="javascript">                selectedColor: <span class="string">&#x27;deepskyblue&#x27;</span>, <span class="comment">// 选中项颜色</span></span></span><br><span class="line"><span class="javascript">                autoSelect: <span class="literal">true</span>, <span class="comment">// 根据鼠标位置来自动设置选中项</span></span></span><br><span class="line"><span class="javascript">                onClick: <span class="function">(<span class="params">e</span>) =&gt;</span> &#123; <span class="comment">// 点击事件</span></span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="string">&#x27;click&#x27;</span>, e);</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                onDblClick: <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="string">&#x27;double click&#x27;</span>, e);</span></span><br><span class="line">                &#125;,</span><br><span class="line"><span class="javascript">                onRightClick: <span class="function"><span class="params">e</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="built_in">console</span>.log(<span class="string">&#x27;right click&#x27;</span>, e);</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> data = [];</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> citys = [</span></span><br><span class="line"><span class="javascript">                <span class="string">&#x27;北京&#x27;</span>, <span class="string">&#x27;天津&#x27;</span>, <span class="string">&#x27;上海&#x27;</span>, <span class="string">&#x27;重庆&#x27;</span>, <span class="string">&#x27;石家庄&#x27;</span>, <span class="string">&#x27;太原&#x27;</span>, <span class="string">&#x27;呼和浩特&#x27;</span>, <span class="string">&#x27;哈尔滨&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;长春&#x27;, &#x27;沈阳&#x27;, &#x27;济南&#x27;, &#x27;南京&#x27;, &#x27;合肥&#x27;, &#x27;杭州&#x27;, &#x27;南昌&#x27;, &#x27;福州&#x27;, &#x27;郑州&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;武汉&#x27;, &#x27;长沙&#x27;, &#x27;广州&#x27;, &#x27;南宁&#x27;, &#x27;西安&#x27;, &#x27;银川&#x27;, &#x27;兰州&#x27;, &#x27;西宁&#x27;, &#x27;乌鲁木齐&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;成都&#x27;, &#x27;贵阳&#x27;, &#x27;昆明&#x27;, &#x27;拉萨&#x27;, &#x27;海口&#x27;</span></span></span><br><span class="line">            ];</span><br><span class="line"><span class="javascript">            <span class="comment">//标记落点</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> markers = [</span></span><br><span class="line"><span class="javascript">                <span class="string">&#x27;img/location.png&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/icon-accident.png&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/icon-airplane.png&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/icon-location.png&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/label-accident.png&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/label-jam.png&#x27;,</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// &#x27;img/icons/label-warning.png&#x27;,</span></span></span><br><span class="line">            ];</span><br><span class="line"><span class="javascript"><span class="comment">//图标族</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> randomCount = <span class="number">100</span>;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">            <span class="comment">// 构造数据</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">while</span> (randomCount--) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> cityCenter = mapv.utilCityCenter.getCenterByCityName(citys[<span class="built_in">parseInt</span>(<span class="built_in">Math</span>.random() * citys.length, <span class="number">10</span>)]);</span></span><br><span class="line">                data.push(&#123;</span><br><span class="line">                    geometry: &#123;</span><br><span class="line"><span class="javascript">                        type: <span class="string">&#x27;Point&#x27;</span>,</span></span><br><span class="line"><span class="javascript">                        coordinates: [cityCenter.lng - <span class="number">2</span> + <span class="built_in">Math</span>.random() * <span class="number">4</span>, cityCenter.lat - <span class="number">2</span> + <span class="built_in">Math</span>.random() * <span class="number">4</span>]</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                </span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line"><span class="javascript">            fetch(<span class="string">&#x27;./js/car.csv&#x27;</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">rs</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> rs.text();</span></span><br><span class="line"><span class="javascript">            &#125;).then(<span class="function"><span class="keyword">function</span>(<span class="params">csvstr</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> dataSet = mapv.csv.getDataSet(csvstr);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">var</span> data = dataSet.get();</span></span><br><span class="line">                data = data.slice(5, 6);</span><br><span class="line">                view.addLayer(lineLayer);</span><br><span class="line">                lineLayer.setData(data);</span><br><span class="line"><span class="javascript">                <span class="comment">//获取本地坐标数据,选择地区渲染路线</span></span></span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">            view.addLayer(layer);</span><br><span class="line">            layer.setData(data);</span><br><span class="line"><span class="javascript">            map.setDefaultCursor(<span class="string">&#x27;default&#x27;</span>);</span></span><br><span class="line"><span class="javascript">            <span class="comment">//将图标渲染进地图层</span></span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="vue使用百度地图"><a href="#vue使用百度地图" class="headerlink" title="vue使用百度地图"></a>vue使用百度地图</h4><p>安装</p>
+<p><code>npm i mapv</code></p>
+<p>在index页引入如下包</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://api.map.baidu.com/api?v=1.0&amp;type=webgl&amp;ak=rQxHPQX1ua21rWnXzTbUh5KSSUbnefxR&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://code.bdstatic.com/npm/mapvgl@1.0.0-beta.51/dist/mapvgl.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://mapv.baidu.com/gl/examples/static/common.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=rQxHPQX1ua21rWnXzTbUh5KSSUbnefxR&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;http://mapv.baidu.com/build/mapv.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2020年08月07日 17:19</p>
+        <p>原始链接： <a class="post-url" href="/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" title="">https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/</a></p>
+        <footer>
+            <a href="https://1211428762.github.io">
+                <img src="/images/logo.png" alt="こゅき">
+                こゅき
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/&title=Hexo&pic=https://1211428762.github.ioimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/&title=Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Hexo&url=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/&via=https://1211428762.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://1211428762.github.io/2020/08/20/map%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3-Version2-0-56"><span class="post-toc-text">百度地图使用文档(Version2.0.56)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%BC%95%E5%85%A5%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE%E5%8C%85"><span class="post-toc-text">引入百度地图包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DOM%E7%BB%93%E6%9E%84"><span class="post-toc-text">DOM结构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#vue%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E5%9C%B0%E5%9B%BE"><span class="post-toc-text">vue使用百度地图</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 こゅき<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://1211428762.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  
+<script src="/js/animate.js"></script>
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
